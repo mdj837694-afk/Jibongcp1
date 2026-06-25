@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVICE_NAME="${1:-imran-trojan}"
+SERVICE_NAME="${1:-bdfreeinternet-vless}"
 REGION="${2:-us-central1}"
 SERVICE_URL=$(gcloud run services describe "$SERVICE_NAME" --region="$REGION" --format='value(status.url)' 2>/dev/null)
 
@@ -11,7 +11,7 @@ fi
 
 LOG_DIR="$HOME/network-logs"
 mkdir -p "$LOG_DIR"
-LOG_FILE="$LOG_DIR/trojan-status-$(date +%Y%m%d).log"
+LOG_FILE="$LOG_DIR/vless-status-$(date +%Y%m%d).log"
 INTERVAL=10
 
 GREEN='\033[0;32m'
@@ -22,7 +22,7 @@ BOLD='\033[1m'
 RESET='\033[0m'
 
 echo -e "${BOLD}${CYAN}=========================================${RESET}"
-echo -e "${BOLD}${CYAN}   TROJAN WS HTTP MONITOR STARTED        ${RESET}"
+echo -e "${BOLD}${CYAN}   VLESS WS HTTP MONITOR STARTED        ${RESET}"
 echo -e "${BOLD}${CYAN}=========================================${RESET}"
 echo -e "${CYAN}Target:${RESET} $SERVICE_URL"
 echo -e "Press Ctrl+C to stop.\n"
