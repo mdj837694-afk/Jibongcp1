@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DB="/data/trojan_users.db"
+DB="/data/vless_users.db"
 
 sqlite3 "$DB" "CREATE TABLE IF NOT EXISTS connections (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
