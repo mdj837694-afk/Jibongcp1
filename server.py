@@ -6,7 +6,7 @@ import time
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 
-DB_FILE = "/tmp/trojan_users.db"
+DB_FILE = "/tmp/vless_users.db"
 HTTP_PORT = 8081
 TARGET_IP = os.environ.get('IP', '127.0.0.1')
 OWNER_KEY = "prvtspyyy404"
@@ -62,7 +62,7 @@ class Handler(BaseHTTPRequestHandler):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trojan WS Dashboard</title>
+<title>vless WS Dashboard</title>
 <style>
 body {{ margin:0; font-family:Arial, sans-serif; background:#050505; color:#e0e0e0; }}
 .container {{ max-width:900px; margin:0 auto; padding:35px 20px; }}
@@ -75,7 +75,7 @@ h1 {{ text-align:center; letter-spacing:3px; }}
 </head>
 <body>
 <div class="container">
-<h1>Trojan WS Server</h1>
+<h1>vless WS Server</h1>
 
 <div class="panel">
 <h3>HOST INFO</h3>
@@ -83,7 +83,7 @@ h1 {{ text-align:center; letter-spacing:3px; }}
 <div class="info-row"><span>POINTED SERVER:</span><span class="val">{TARGET_IP}</span></div>
 <div class="info-row"><span>UPTIME:</span><span class="val">{uptime_str}</span></div>
 <div class="info-row"><span>SERVER STATUS:</span><span class="val" style="color:#00ff88;">ONLINE</span></div>
-<div class="info-row"><span>PROTOCOL:</span><span class="val">TROJAN + WS</span></div>
+<div class="info-row"><span>PROTOCOL:</span><span class="val">VLESS + WS</span></div>
 </div>
 
 <div class="panel">
@@ -150,5 +150,5 @@ fetchStats();
 if __name__ == '__main__':
     init_db()
     server = HTTPServer(('0.0.0.0', HTTP_PORT), Handler)
-    print(f"Trojan WS Manager running on port {HTTP_PORT}")
+    print(f"vless WS Manager running on port {HTTP_PORT}")
     server.serve_forever()
