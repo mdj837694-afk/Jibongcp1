@@ -106,7 +106,7 @@ SERVICE_URL=$(gcloud run services describe "$SERVICE_NAME" \
 
 HOST=$(echo "$SERVICE_URL" | sed 's|https://||')
 
-PASSWORD="BD-FREE-INTERNET"
+PASSWORD="BD-FREE-INTERNET12"
 WS_PATH="/Telegram/Channel/link/@BD_FREE_INTERNET"
 ENCODED_PATH="%2FTelegram%2FChannel%2Flink%2F@BD_FREE_INTERNET"
 SNI="firebase-settings.crashlytics.com"
