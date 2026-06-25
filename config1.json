@@ -1,0 +1,46 @@
+{
+  "log": { "loglevel": "none" },
+  "inbounds": [
+    {
+      "port": 8080,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          { "password": "BD-FREE-INTERNET" }
+        ],
+        "fallbacks": [
+          { "dest": 8081 }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "path": "/Telegram/Channel/link/@BD_FREE_INTERNET"
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 8081,
+      "protocol": "http",
+      "settings": {
+        "response": {
+          "status": 200,
+          "headers": { "Content-Type": ["text/plain"] },
+          "body": "mdjibon2425"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": { "domainStrategy": "UseIPv4" }
+    }
+  ]
+}
