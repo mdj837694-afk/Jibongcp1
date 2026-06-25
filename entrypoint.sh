@@ -4,5 +4,5 @@ PORT=${PORT:-8080}
 
 sed -i "s/\"port\": 8080/\"port\": $PORT/g" /etc/xray/config.json
 
-echo "Starting Xray Trojan WS on Dynamic Port: $PORT"
+echo "Starting Xray vless WS on Dynamic Port: $PORT"
 /usr/bin/xray run -c /etc/xray/config.json
